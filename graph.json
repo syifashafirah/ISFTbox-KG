@@ -1,42 +1,4444 @@
-{
-  "version": 2,
-  "title": "New dashboard",
-  "description": "",
-  "pages": [
-    {
-      "version": 1,
-      "title": "Main page",
-      "widgets": [
-        {
-          "version": 1,
-          "title": "ISF_TBOX",
-          "w": 12,
-          "h": 7,
-          "x": 0,
-          "y": 0,
-          "meta": {
-            "latestCypherQueries": [
-              {
-                "query": "MATCH (n)\nOPTIONAL MATCH (n)-[r]->(m)\nRETURN n, r, m",
-                "origin": "user"
-              }
-            ]
-          },
-          "settings": {
-            "type": "graph",
-            "query": "MATCH (n)\nOPTIONAL MATCH (n)-[r]->(m)\nRETURN n, r, m\n",
-            "databaseName": "isftboxv2",
-            "version": 2,
-            "enableSidePanel": true,
-            "enableContextMenu": true,
-            "layout": {
-              "type": "d3Force"
-            },
-            "enableDownloadImage": true
-          }
-        }
-      ]
+[
+  {
+    "n": {
+      "identity": 0,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Almsgiving",
+        "obligation": "mandatory",
+        "name": "Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0"
+    },
+    "r": {
+      "identity": 1152924803141730304,
+      "start": 0,
+      "end": 66,
+      "type": "CONDITIONED_TO",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152924803141730304",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:66"
+    },
+    "m": {
+      "identity": 66,
+      "labels": [
+        "ObligatoryConditions"
+      ],
+      "properties": {
+        "name": "Nisab"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:66"
     }
-  ],
-  "params": []
-}
+  },
+  {
+    "n": {
+      "identity": 0,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Almsgiving",
+        "obligation": "mandatory",
+        "name": "Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0"
+    },
+    "r": {
+      "identity": 1155191996118204416,
+      "start": 0,
+      "end": 19,
+      "type": "MANAGED_BY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155191996118204416",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:19"
+    },
+    "m": {
+      "identity": 19,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Institutions",
+        "example": "Zakat Pulau Pinang"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:19"
+    }
+  },
+  {
+    "n": {
+      "identity": 0,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Almsgiving",
+        "obligation": "mandatory",
+        "name": "Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0"
+    },
+    "r": {
+      "identity": 1152947892885913600,
+      "start": 0,
+      "end": 62,
+      "type": "REQUIRES",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152947892885913600",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:62"
+    },
+    "m": {
+      "identity": 62,
+      "labels": [
+        "ObligatoryConditions"
+      ],
+      "properties": {
+        "name": "Haul"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:62"
+    }
+  },
+  {
+    "n": {
+      "identity": 0,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Almsgiving",
+        "obligation": "mandatory",
+        "name": "Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0"
+    },
+    "r": {
+      "identity": 1152948992397541376,
+      "start": 0,
+      "end": 17,
+      "type": "DISTRIBUTE_TO",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152948992397541376",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "m": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    }
+  },
+  {
+    "n": {
+      "identity": 2,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Endowment",
+        "name": "Waqf",
+        "example": "cash, nonCash"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:2"
+    },
+    "r": {
+      "identity": 1152927002164985858,
+      "start": 2,
+      "end": 3,
+      "type": "TYPE_OF",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152927002164985858",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:2",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:3"
+    },
+    "m": {
+      "identity": 3,
+      "labels": [
+        "AssetType"
+      ],
+      "properties": {
+        "name": "Cash",
+        "currency": "Ringgit or Dollar"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:3"
+    }
+  },
+  {
+    "n": {
+      "identity": 2,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Endowment",
+        "name": "Waqf",
+        "example": "cash, nonCash"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:2"
+    },
+    "r": {
+      "identity": 1155178801978671106,
+      "start": 2,
+      "end": 51,
+      "type": "TYPE_OF",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155178801978671106",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:2",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:51"
+    },
+    "m": {
+      "identity": 51,
+      "labels": [
+        "AssetType"
+      ],
+      "properties": {
+        "name": "Physical Asset",
+        "example": "House, Building, Gold",
+        "status": "tangible or intangible"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:51"
+    }
+  },
+  {
+    "n": {
+      "identity": 2,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Endowment",
+        "name": "Waqf",
+        "example": "cash, nonCash"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:2"
+    },
+    "r": {
+      "identity": 1152962186537074690,
+      "start": 2,
+      "end": 50,
+      "type": "REGULATED_BY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152962186537074690",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:2",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50"
+    },
+    "m": {
+      "identity": 50,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "task": "manage, administer, standardize waqaf assets",
+        "name": "Waqaf Authorities"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50"
+    }
+  },
+  {
+    "n": {
+      "identity": 3,
+      "labels": [
+        "AssetType"
+      ],
+      "properties": {
+        "name": "Cash",
+        "currency": "Ringgit or Dollar"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:3"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 4,
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "Global Nations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:4"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "r": {
+      "identity": 1159719785001385990,
+      "start": 6,
+      "end": 54,
+      "type": "HAS_CONTRACT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1159719785001385990",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:54"
+    },
+    "m": {
+      "identity": 54,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "debt_qard"
+      ],
+      "properties": {
+        "meaning": "Advance Purchase",
+        "name": "Bai Al Salam"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:54"
+    }
+  },
+  {
+    "n": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "r": {
+      "identity": 1152964385560330246,
+      "start": 6,
+      "end": 55,
+      "type": "HAS_CONTRACT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152964385560330246",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:55"
+    },
+    "m": {
+      "identity": 55,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "meaning": "lease",
+        "name": "Ijarah",
+        "repayment_required": "True"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:55"
+    }
+  },
+  {
+    "n": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "r": {
+      "identity": 1157467985187700742,
+      "start": 6,
+      "end": 56,
+      "type": "HAS_CONTRACT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1157467985187700742",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:56"
+    },
+    "m": {
+      "identity": 56,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "meaning": "CostPlus",
+        "name": "Murabahah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:56"
+    }
+  },
+  {
+    "n": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "r": {
+      "identity": 6917571908594565180,
+      "start": 6,
+      "end": 60,
+      "type": "HAS_CONTRACT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6917571908594565180",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:60"
+    },
+    "m": {
+      "identity": 60,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "meaning": "pawn-broking",
+        "name": "Rahn"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:60"
+    }
+  },
+  {
+    "n": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "r": {
+      "identity": 1155216185374015494,
+      "start": 6,
+      "end": 63,
+      "type": "HAS_CONTRACT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155216185374015494",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:63"
+    },
+    "m": {
+      "identity": 63,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "name": "Istisna'"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:63"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1152933599234752522,
+      "start": 10,
+      "end": 15,
+      "type": "INVOLVE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152933599234752522",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:15"
+    },
+    "m": {
+      "identity": 15,
+      "labels": [
+        "Stakeholder"
+      ],
+      "properties": {
+        "name": "Stakeholder",
+        "type": "individual or organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:15"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 6917567510548054016,
+      "start": 10,
+      "end": 0,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6917567510548054016",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0"
+    },
+    "m": {
+      "identity": 0,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Almsgiving",
+        "obligation": "mandatory",
+        "name": "Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:0"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 6917567510548054018,
+      "start": 10,
+      "end": 2,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6917567510548054018",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:2"
+    },
+    "m": {
+      "identity": 2,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Endowment",
+        "name": "Waqf",
+        "example": "cash, nonCash"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:2"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1157463587141189642,
+      "start": 10,
+      "end": 6,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1157463587141189642",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "m": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 6917567510548054027,
+      "start": 10,
+      "end": 11,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6917567510548054027",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:11"
+    },
+    "m": {
+      "identity": 11,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Donation",
+        "name": "Sadaqah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:11"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1159715386954874890,
+      "start": 10,
+      "end": 35,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1159715386954874890",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:35"
+    },
+    "m": {
+      "identity": 35,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "meaning": "Agency",
+        "name": "Wakalah",
+        "legalNature": "Amanah",
+        "remuneration": "Ujrah, Tabarru"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:35"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1155211787327504394,
+      "start": 10,
+      "end": 37,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155211787327504394",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:37"
+    },
+    "m": {
+      "identity": 37,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "name": "Takaful",
+        "category": "Insurance"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:37"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 6917567510548054054,
+      "start": 10,
+      "end": 38,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6917567510548054054",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:38"
+    },
+    "m": {
+      "identity": 38,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Mutual assistance",
+        "name": "Ta'awun"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:38"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1161967186768560138,
+      "start": 10,
+      "end": 42,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1161967186768560138",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42"
+    },
+    "m": {
+      "identity": 42,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "name": "Kafalah",
+        "instrument_type": "Kafalah",
+        "category": "Guarantee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1166470786395930634,
+      "start": 10,
+      "end": 44,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1166470786395930634",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:44"
+    },
+    "m": {
+      "identity": 44,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "equity_based"
+      ],
+      "properties": {
+        "meaning": "partnership",
+        "name": "Mudharabah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:44"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1164218986582245386,
+      "start": 10,
+      "end": 52,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1164218986582245386",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:52"
+    },
+    "m": {
+      "identity": 52,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "equity_based"
+      ],
+      "properties": {
+        "meaning": "jointVenture",
+        "profitSharing": "Mudarabah",
+        "name": "Musharakah",
+        "lossProvision": "CapitalProportion"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:52"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 6917567510548054070,
+      "start": 10,
+      "end": 54,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6917567510548054070",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:54"
+    },
+    "m": {
+      "identity": 54,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "debt_qard"
+      ],
+      "properties": {
+        "meaning": "Advance Purchase",
+        "name": "Bai Al Salam"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:54"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1173226185836986378,
+      "start": 10,
+      "end": 55,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1173226185836986378",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:55"
+    },
+    "m": {
+      "identity": 55,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "meaning": "lease",
+        "name": "Ijarah",
+        "repayment_required": "True"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:55"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1168722586209615882,
+      "start": 10,
+      "end": 56,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1168722586209615882",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:56"
+    },
+    "m": {
+      "identity": 56,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "meaning": "CostPlus",
+        "name": "Murabahah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:56"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 1152959987513819146,
+      "start": 10,
+      "end": 60,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152959987513819146",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:60"
+    },
+    "m": {
+      "identity": 60,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "meaning": "pawn-broking",
+        "name": "Rahn"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:60"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 6917567510548054079,
+      "start": 10,
+      "end": 63,
+      "type": "HAS_INSTRUMENT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6917567510548054079",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:63"
+    },
+    "m": {
+      "identity": 63,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "name": "Istisna'"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:63"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "Domain"
+      ],
+      "properties": {
+        "name": "Islamic Social Finance",
+        "focus": "PovertyAlleviation",
+        "category": "FinancialMechanism",
+        "abbreviation": "ISF",
+        "governance": "MaqasidShariah",
+        "objective": "SocialWelfare"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10"
+    },
+    "r": {
+      "identity": 6917568610059681796,
+      "start": 10,
+      "end": 4,
+      "type": "PRACTICED_IN",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6917568610059681796",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:10",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:4"
+    },
+    "m": {
+      "identity": 4,
+      "labels": [
+        "Location"
+      ],
+      "properties": {
+        "name": "Global Nations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:4"
+    }
+  },
+  {
+    "n": {
+      "identity": 11,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Donation",
+        "name": "Sadaqah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:11"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 12,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Donor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:12"
+    },
+    "r": {
+      "identity": 1152956688978935820,
+      "start": 12,
+      "end": 13,
+      "type": "DONATES_TO",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152956688978935820",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:12",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    },
+    "m": {
+      "identity": 13,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Foundations",
+        "definition": "funding bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    }
+  },
+  {
+    "n": {
+      "identity": 12,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Donor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:12"
+    },
+    "r": {
+      "identity": 6922068911152168976,
+      "start": 12,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6922068911152168976",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:12",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 12,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Donor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:12"
+    },
+    "r": {
+      "identity": 1152958888002191372,
+      "start": 12,
+      "end": 11,
+      "type": "GIVE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152958888002191372",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:12",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:11"
+    },
+    "m": {
+      "identity": 11,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Donation",
+        "name": "Sadaqah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:11"
+    }
+  },
+  {
+    "n": {
+      "identity": 13,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Foundations",
+        "definition": "funding bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    },
+    "r": {
+      "identity": 1152932499723124749,
+      "start": 13,
+      "end": 14,
+      "type": "CONTRIBUTES_TO",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152932499723124749",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    },
+    "m": {
+      "identity": 14,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Beneficiary"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    }
+  },
+  {
+    "n": {
+      "identity": 13,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Foundations",
+        "definition": "funding bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    },
+    "r": {
+      "identity": 6935579710034280473,
+      "start": 13,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6935579710034280473",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 13,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Foundations",
+        "definition": "funding bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    },
+    "r": {
+      "identity": 6924320710965854256,
+      "start": 13,
+      "end": 48,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6924320710965854256",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48"
+    },
+    "m": {
+      "identity": 48,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqf Institutions",
+        "example": "Yayasan Waqaf Malaysia"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48"
+    }
+  },
+  {
+    "n": {
+      "identity": 14,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Beneficiary"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    },
+    "r": {
+      "identity": 6926572510779539472,
+      "start": 14,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6926572510779539472",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 15,
+      "labels": [
+        "Stakeholder"
+      ],
+      "properties": {
+        "name": "Stakeholder",
+        "type": "individual or organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:15"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "r": {
+      "identity": 1152957788490563600,
+      "start": 16,
+      "end": 15,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152957788490563600",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:15"
+    },
+    "m": {
+      "identity": 15,
+      "labels": [
+        "Stakeholder"
+      ],
+      "properties": {
+        "name": "Stakeholder",
+        "type": "individual or organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:15"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1152934698746380305,
+      "start": 17,
+      "end": 18,
+      "type": "IS_CATEGORY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152934698746380305",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:18"
+    },
+    "m": {
+      "identity": 18,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "In the cause of God",
+        "name": "Fisabilillah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:18"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1155186498560065553,
+      "start": 17,
+      "end": 23,
+      "type": "IS_CATEGORY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155186498560065553",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:23"
+    },
+    "m": {
+      "identity": 23,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Zakat administrators",
+        "name": "Amil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:23"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1157438298373750801,
+      "start": 17,
+      "end": 26,
+      "type": "IS_CATEGORY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1157438298373750801",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:26"
+    },
+    "m": {
+      "identity": 26,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "The poor",
+        "name": "Fakir"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:26"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1159690098187436049,
+      "start": 17,
+      "end": 27,
+      "type": "IS_CATEGORY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1159690098187436049",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:27"
+    },
+    "m": {
+      "identity": 27,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "The debt-ridden",
+        "name": "Gharimi"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:27"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1161941898001121297,
+      "start": 17,
+      "end": 28,
+      "type": "IS_CATEGORY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1161941898001121297",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:28"
+    },
+    "m": {
+      "identity": 28,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Those freeing slaves",
+        "name": "Riqab"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:28"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1164193697814806545,
+      "start": 17,
+      "end": 29,
+      "type": "IS_CATEGORY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1164193697814806545",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:29"
+    },
+    "m": {
+      "identity": 29,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Revert",
+        "name": "Mualaf"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:29"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1166445497628491793,
+      "start": 17,
+      "end": 30,
+      "type": "IS_CATEGORY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1166445497628491793",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:30"
+    },
+    "m": {
+      "identity": 30,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "The needy",
+        "name": "Miskin"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:30"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1168697297442177041,
+      "start": 17,
+      "end": 31,
+      "type": "IS_CATEGORY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1168697297442177041",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:31"
+    },
+    "m": {
+      "identity": 31,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Travellers",
+        "name": "IbnuSabil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:31"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 1152957788490563601,
+      "start": 17,
+      "end": 14,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152957788490563601",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    },
+    "m": {
+      "identity": 14,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Beneficiary"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    }
+  },
+  {
+    "n": {
+      "identity": 17,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "name": "Asnaf",
+        "definition": "the eight specific categories of individuals or groups who are eligible to receive Zakat"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17"
+    },
+    "r": {
+      "identity": 6919817111338483728,
+      "start": 17,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6919817111338483728",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:17",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 18,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "In the cause of God",
+        "name": "Fisabilillah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:18"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 19,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Institutions",
+        "example": "Zakat Pulau Pinang"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:19"
+    },
+    "r": {
+      "identity": 1155182100513554451,
+      "start": 19,
+      "end": 20,
+      "type": "HAS",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155182100513554451",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:19",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:20"
+    },
+    "m": {
+      "identity": 20,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Collector"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:20"
+    }
+  },
+  {
+    "n": {
+      "identity": 19,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Institutions",
+        "example": "Zakat Pulau Pinang"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:19"
+    },
+    "r": {
+      "identity": 1152930300699869203,
+      "start": 19,
+      "end": 22,
+      "type": "HAS",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152930300699869203",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:19",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:22"
+    },
+    "m": {
+      "identity": 22,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Distributor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:22"
+    }
+  },
+  {
+    "n": {
+      "identity": 19,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Institutions",
+        "example": "Zakat Pulau Pinang"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:19"
+    },
+    "r": {
+      "identity": 1157461388117934099,
+      "start": 19,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1157461388117934099",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:19",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 20,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Collector"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:20"
+    },
+    "r": {
+      "identity": 1152939096792891412,
+      "start": 20,
+      "end": 23,
+      "type": "APPOINT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152939096792891412",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:20",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:23"
+    },
+    "m": {
+      "identity": 23,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Zakat administrators",
+        "name": "Amil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:23"
+    }
+  },
+  {
+    "n": {
+      "identity": 22,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Distributor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:22"
+    },
+    "r": {
+      "identity": 1152939096792891414,
+      "start": 22,
+      "end": 23,
+      "type": "APPOINT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152939096792891414",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:22",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:23"
+    },
+    "m": {
+      "identity": 23,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Zakat administrators",
+        "name": "Amil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:23"
+    }
+  },
+  {
+    "n": {
+      "identity": 23,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Zakat administrators",
+        "name": "Amil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:23"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 24,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "supervisionType": "Financial, ShariahCompliance, Administrative",
+        "name": "State Islamic Religous Council",
+        "authorityLevel": "State",
+        "legalFramework": "IslamicJurisdiction"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24"
+    },
+    "r": {
+      "identity": 1152957788490563608,
+      "start": 24,
+      "end": 20,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152957788490563608",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:20"
+    },
+    "m": {
+      "identity": 20,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Collector"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:20"
+    }
+  },
+  {
+    "n": {
+      "identity": 24,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "supervisionType": "Financial, ShariahCompliance, Administrative",
+        "name": "State Islamic Religous Council",
+        "authorityLevel": "State",
+        "legalFramework": "IslamicJurisdiction"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24"
+    },
+    "r": {
+      "identity": 1161964987745304600,
+      "start": 24,
+      "end": 22,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1161964987745304600",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:22"
+    },
+    "m": {
+      "identity": 22,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Distributor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:22"
+    }
+  },
+  {
+    "n": {
+      "identity": 24,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "supervisionType": "Financial, ShariahCompliance, Administrative",
+        "name": "State Islamic Religous Council",
+        "authorityLevel": "State",
+        "legalFramework": "IslamicJurisdiction"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24"
+    },
+    "r": {
+      "identity": 1155209588304248856,
+      "start": 24,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155209588304248856",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 24,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "supervisionType": "Financial, ShariahCompliance, Administrative",
+        "name": "State Islamic Religous Council",
+        "authorityLevel": "State",
+        "legalFramework": "IslamicJurisdiction"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24"
+    },
+    "r": {
+      "identity": 1157461388117934104,
+      "start": 24,
+      "end": 47,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1157461388117934104",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:47"
+    },
+    "m": {
+      "identity": 47,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqaf Distributor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:47"
+    }
+  },
+  {
+    "n": {
+      "identity": 24,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "supervisionType": "Financial, ShariahCompliance, Administrative",
+        "name": "State Islamic Religous Council",
+        "authorityLevel": "State",
+        "legalFramework": "IslamicJurisdiction"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24"
+    },
+    "r": {
+      "identity": 1159713187931619352,
+      "start": 24,
+      "end": 49,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1159713187931619352",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    },
+    "m": {
+      "identity": 49,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Mutawalli",
+        "definition": "Waqaf Trustee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    }
+  },
+  {
+    "n": {
+      "identity": 24,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "supervisionType": "Financial, ShariahCompliance, Administrative",
+        "name": "State Islamic Religous Council",
+        "authorityLevel": "State",
+        "legalFramework": "IslamicJurisdiction"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24"
+    },
+    "r": {
+      "identity": 1164216787558989848,
+      "start": 24,
+      "end": 50,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1164216787558989848",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50"
+    },
+    "m": {
+      "identity": 50,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "task": "manage, administer, standardize waqaf assets",
+        "name": "Waqaf Authorities"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50"
+    }
+  },
+  {
+    "n": {
+      "identity": 24,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "supervisionType": "Financial, ShariahCompliance, Administrative",
+        "name": "State Islamic Religous Council",
+        "authorityLevel": "State",
+        "legalFramework": "IslamicJurisdiction"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24"
+    },
+    "r": {
+      "identity": 1152963286048702488,
+      "start": 24,
+      "end": 48,
+      "type": "SUPERVISE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152963286048702488",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:24",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48"
+    },
+    "m": {
+      "identity": 48,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqf Institutions",
+        "example": "Yayasan Waqaf Malaysia"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48"
+    }
+  },
+  {
+    "n": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "r": {
+      "identity": 1152957788490563609,
+      "start": 25,
+      "end": 15,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152957788490563609",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:15"
+    },
+    "m": {
+      "identity": 15,
+      "labels": [
+        "Stakeholder"
+      ],
+      "properties": {
+        "name": "Stakeholder",
+        "type": "individual or organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:15"
+    }
+  },
+  {
+    "n": {
+      "identity": 26,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "The poor",
+        "name": "Fakir"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:26"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 27,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "The debt-ridden",
+        "name": "Gharimi"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:27"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 28,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Those freeing slaves",
+        "name": "Riqab"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:28"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 29,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Revert",
+        "name": "Mualaf"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:29"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 30,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "The needy",
+        "name": "Miskin"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:30"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 31,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "ZakatRecipient"
+      ],
+      "properties": {
+        "meaning": "Travellers",
+        "name": "IbnuSabil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:31"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 32,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "capitalSource": "Depositors, Shareholders, Investment Accounts",
+        "name": "IslamicBank"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:32"
+    },
+    "r": {
+      "identity": 1152952290932424736,
+      "start": 32,
+      "end": 6,
+      "type": "PROVIDE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152952290932424736",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:32",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "m": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    }
+  },
+  {
+    "n": {
+      "identity": 32,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "capitalSource": "Depositors, Shareholders, Investment Accounts",
+        "name": "IslamicBank"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:32"
+    },
+    "r": {
+      "identity": 6919817111338483737,
+      "start": 32,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6919817111338483737",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:32",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 33,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "businessModel": "B2B, B2C",
+        "name": "Corporations",
+        "sector": "Fintech, Consultancy, Takaful, Legal, Technology"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33"
+    },
+    "r": {
+      "identity": 1152937997281263649,
+      "start": 33,
+      "end": 13,
+      "type": "COMMUNICATE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152937997281263649",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    },
+    "m": {
+      "identity": 13,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Foundations",
+        "definition": "funding bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    }
+  },
+  {
+    "n": {
+      "identity": 33,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "businessModel": "B2B, B2C",
+        "name": "Corporations",
+        "sector": "Fintech, Consultancy, Takaful, Legal, Technology"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33"
+    },
+    "r": {
+      "identity": 1152945693862658081,
+      "start": 33,
+      "end": 32,
+      "type": "INVEST",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152945693862658081",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:32"
+    },
+    "m": {
+      "identity": 32,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "capitalSource": "Depositors, Shareholders, Investment Accounts",
+        "name": "IslamicBank"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:32"
+    }
+  },
+  {
+    "n": {
+      "identity": 33,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "businessModel": "B2B, B2C",
+        "name": "Corporations",
+        "sector": "Fintech, Consultancy, Takaful, Legal, Technology"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33"
+    },
+    "r": {
+      "identity": 6922068911152168985,
+      "start": 33,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6922068911152168985",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 33,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "businessModel": "B2B, B2C",
+        "name": "Corporations",
+        "sector": "Fintech, Consultancy, Takaful, Legal, Technology"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33"
+    },
+    "r": {
+      "identity": 1152957788490563617,
+      "start": 33,
+      "end": 46,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152957788490563617",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:46"
+    },
+    "m": {
+      "identity": 46,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "endower",
+        "name": "Waqif"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:46"
+    }
+  },
+  {
+    "n": {
+      "identity": 33,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "businessModel": "B2B, B2C",
+        "name": "Corporations",
+        "sector": "Fintech, Consultancy, Takaful, Legal, Technology"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33"
+    },
+    "r": {
+      "identity": 1155209588304248865,
+      "start": 33,
+      "end": 65,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155209588304248865",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65"
+    },
+    "m": {
+      "identity": 65,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "ZakatPayer",
+        "name": "Muzzaki",
+        "wealthType": "Cash, Gold, Business"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65"
+    }
+  },
+  {
+    "n": {
+      "identity": 34,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "task": "delegateTask",
+        "meaning": "The Principal",
+        "name": "Muwakkil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:34"
+    },
+    "r": {
+      "identity": 1152939096792891426,
+      "start": 34,
+      "end": 40,
+      "type": "APPOINT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152939096792891426",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:34",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:40"
+    },
+    "m": {
+      "identity": 40,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "task": "executeTask",
+        "name": "Wakil",
+        "shariahTerm": "The Agent"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:40"
+    }
+  },
+  {
+    "n": {
+      "identity": 34,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "task": "delegateTask",
+        "meaning": "The Principal",
+        "name": "Muwakkil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:34"
+    },
+    "r": {
+      "identity": 6924320710965854233,
+      "start": 34,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6924320710965854233",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:34",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 35,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "meaning": "Agency",
+        "name": "Wakalah",
+        "legalNature": "Amanah",
+        "remuneration": "Ujrah, Tabarru"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:35"
+    },
+    "r": {
+      "identity": 1152944594351030307,
+      "start": 35,
+      "end": 34,
+      "type": "GOVERNED_BY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152944594351030307",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:35",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:34"
+    },
+    "m": {
+      "identity": 34,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "task": "delegateTask",
+        "meaning": "The Principal",
+        "name": "Muwakkil"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:34"
+    }
+  },
+  {
+    "n": {
+      "identity": 37,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "name": "Takaful",
+        "category": "Insurance"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:37"
+    },
+    "r": {
+      "identity": 1152948992397541413,
+      "start": 37,
+      "end": 14,
+      "type": "DISTRIBUTE_TO",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152948992397541413",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:37",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    },
+    "m": {
+      "identity": 14,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Beneficiary"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    }
+  },
+  {
+    "n": {
+      "identity": 38,
+      "labels": [
+        "Instrument",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "Mutual assistance",
+        "name": "Ta'awun"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:38"
+    },
+    "r": {
+      "identity": 1152950091909169190,
+      "start": 38,
+      "end": 37,
+      "type": "RELATED_TO",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152950091909169190",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:38",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:37"
+    },
+    "m": {
+      "identity": 37,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "name": "Takaful",
+        "category": "Insurance"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:37"
+    }
+  },
+  {
+    "n": {
+      "identity": 39,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Guarantee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:39"
+    },
+    "r": {
+      "identity": 6928824310593224720,
+      "start": 39,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6928824310593224720",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:39",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 40,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "task": "executeTask",
+        "name": "Wakil",
+        "shariahTerm": "The Agent"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:40"
+    },
+    "r": {
+      "identity": 6931076110406909968,
+      "start": 40,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6931076110406909968",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:40",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 41,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Guarantor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:41"
+    },
+    "r": {
+      "identity": 6933327910220595216,
+      "start": 41,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6933327910220595216",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:41",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 42,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "name": "Kafalah",
+        "instrument_type": "Kafalah",
+        "category": "Guarantee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42"
+    },
+    "r": {
+      "identity": 1155185399048437802,
+      "start": 42,
+      "end": 39,
+      "type": "INVOLVE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155185399048437802",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:39"
+    },
+    "m": {
+      "identity": 39,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Guarantee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:39"
+    }
+  },
+  {
+    "n": {
+      "identity": 42,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "name": "Kafalah",
+        "instrument_type": "Kafalah",
+        "category": "Guarantee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42"
+    },
+    "r": {
+      "identity": 1152933599234752554,
+      "start": 42,
+      "end": 41,
+      "type": "INVOLVE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152933599234752554",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:41"
+    },
+    "m": {
+      "identity": 41,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Guarantor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:41"
+    }
+  },
+  {
+    "n": {
+      "identity": 42,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "name": "Kafalah",
+        "instrument_type": "Kafalah",
+        "category": "Guarantee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42"
+    },
+    "r": {
+      "identity": 1157437198862123050,
+      "start": 42,
+      "end": 58,
+      "type": "INVOLVE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1157437198862123050",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:58"
+    },
+    "m": {
+      "identity": 58,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Micro-Entrepreneurs"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:58"
+    }
+  },
+  {
+    "n": {
+      "identity": 42,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "name": "Kafalah",
+        "instrument_type": "Kafalah",
+        "category": "Guarantee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42"
+    },
+    "r": {
+      "identity": 1152951191420796970,
+      "start": 42,
+      "end": 6,
+      "type": "SUPPORT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152951191420796970",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:42",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "m": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    }
+  },
+  {
+    "n": {
+      "identity": 44,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "equity_based"
+      ],
+      "properties": {
+        "meaning": "partnership",
+        "name": "Mudharabah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:44"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 45,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Non Government Organization"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:45"
+    },
+    "r": {
+      "identity": 1152937997281263661,
+      "start": 45,
+      "end": 13,
+      "type": "COMMUNICATE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152937997281263661",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:45",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    },
+    "m": {
+      "identity": 13,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Foundations",
+        "definition": "funding bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:13"
+    }
+  },
+  {
+    "n": {
+      "identity": 45,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Non Government Organization"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:45"
+    },
+    "r": {
+      "identity": 1155189797094948909,
+      "start": 45,
+      "end": 33,
+      "type": "COMMUNICATE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155189797094948909",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:45",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33"
+    },
+    "m": {
+      "identity": 33,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "businessModel": "B2B, B2C",
+        "name": "Corporations",
+        "sector": "Fintech, Consultancy, Takaful, Legal, Technology"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:33"
+    }
+  },
+  {
+    "n": {
+      "identity": 45,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Non Government Organization"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:45"
+    },
+    "r": {
+      "identity": 6926572510779539481,
+      "start": 45,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6926572510779539481",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:45",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 46,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "endower",
+        "name": "Waqif"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:46"
+    },
+    "r": {
+      "identity": 1152939096792891438,
+      "start": 46,
+      "end": 49,
+      "type": "APPOINT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152939096792891438",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:46",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    },
+    "m": {
+      "identity": 49,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Mutawalli",
+        "definition": "Waqaf Trustee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    }
+  },
+  {
+    "n": {
+      "identity": 46,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "endower",
+        "name": "Waqif"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:46"
+    },
+    "r": {
+      "identity": 6935579710034280464,
+      "start": 46,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6935579710034280464",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:46",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 46,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "endower",
+        "name": "Waqif"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:46"
+    },
+    "r": {
+      "identity": 6928824310593224729,
+      "start": 46,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6928824310593224729",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:46",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 47,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqaf Distributor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:47"
+    },
+    "r": {
+      "identity": 1152948992397541423,
+      "start": 47,
+      "end": 57,
+      "type": "DISTRIBUTE_TO",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152948992397541423",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:47",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:57"
+    },
+    "m": {
+      "identity": 57,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "meaning": "Beneficiaries of Waqf",
+        "name": "Mawquf alayh",
+        "category": "Public"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:57"
+    }
+  },
+  {
+    "n": {
+      "identity": 47,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqaf Distributor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:47"
+    },
+    "r": {
+      "identity": 6931076110406909977,
+      "start": 47,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6931076110406909977",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:47",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 48,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqf Institutions",
+        "example": "Yayasan Waqaf Malaysia"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48"
+    },
+    "r": {
+      "identity": 1152944594351030320,
+      "start": 48,
+      "end": 50,
+      "type": "GOVERNED_BY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152944594351030320",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50"
+    },
+    "m": {
+      "identity": 50,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "task": "manage, administer, standardize waqaf assets",
+        "name": "Waqaf Authorities"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50"
+    }
+  },
+  {
+    "n": {
+      "identity": 48,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqf Institutions",
+        "example": "Yayasan Waqaf Malaysia"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48"
+    },
+    "r": {
+      "identity": 1157461388117934128,
+      "start": 48,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1157461388117934128",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 48,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqf Institutions",
+        "example": "Yayasan Waqaf Malaysia"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48"
+    },
+    "r": {
+      "identity": 1152957788490563632,
+      "start": 48,
+      "end": 47,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152957788490563632",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:47"
+    },
+    "m": {
+      "identity": 47,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqaf Distributor"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:47"
+    }
+  },
+  {
+    "n": {
+      "identity": 48,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Waqf Institutions",
+        "example": "Yayasan Waqaf Malaysia"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48"
+    },
+    "r": {
+      "identity": 1155209588304248880,
+      "start": 48,
+      "end": 49,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155209588304248880",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:48",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    },
+    "m": {
+      "identity": 49,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Mutawalli",
+        "definition": "Waqaf Trustee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    }
+  },
+  {
+    "n": {
+      "identity": 49,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Mutawalli",
+        "definition": "Waqaf Trustee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    },
+    "r": {
+      "identity": 6940083309661650960,
+      "start": 49,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6940083309661650960",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 49,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Mutawalli",
+        "definition": "Waqaf Trustee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    },
+    "r": {
+      "identity": 6940083309661650969,
+      "start": 49,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6940083309661650969",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 50,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "task": "manage, administer, standardize waqaf assets",
+        "name": "Waqaf Authorities"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50"
+    },
+    "r": {
+      "identity": 1152939096792891442,
+      "start": 50,
+      "end": 49,
+      "type": "APPOINT",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152939096792891442",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    },
+    "m": {
+      "identity": 49,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Mutawalli",
+        "definition": "Waqaf Trustee"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:49"
+    }
+  },
+  {
+    "n": {
+      "identity": 50,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "task": "manage, administer, standardize waqaf assets",
+        "name": "Waqaf Authorities"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50"
+    },
+    "r": {
+      "identity": 6933327910220595225,
+      "start": 50,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6933327910220595225",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:50",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 51,
+      "labels": [
+        "AssetType"
+      ],
+      "properties": {
+        "name": "Physical Asset",
+        "example": "House, Building, Gold",
+        "status": "tangible or intangible"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:51"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 52,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "equity_based"
+      ],
+      "properties": {
+        "meaning": "jointVenture",
+        "profitSharing": "Mudarabah",
+        "name": "Musharakah",
+        "lossProvision": "CapitalProportion"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:52"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 54,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "debt_qard"
+      ],
+      "properties": {
+        "meaning": "Advance Purchase",
+        "name": "Bai Al Salam"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:54"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 55,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "meaning": "lease",
+        "name": "Ijarah",
+        "repayment_required": "True"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:55"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 56,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "meaning": "CostPlus",
+        "name": "Murabahah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:56"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 57,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "meaning": "Beneficiaries of Waqf",
+        "name": "Mawquf alayh",
+        "category": "Public"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:57"
+    },
+    "r": {
+      "identity": 1152957788490563641,
+      "start": 57,
+      "end": 14,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152957788490563641",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:57",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    },
+    "m": {
+      "identity": 14,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Beneficiary"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:14"
+    }
+  },
+  {
+    "n": {
+      "identity": 57,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "meaning": "Beneficiaries of Waqf",
+        "name": "Mawquf alayh",
+        "category": "Public"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:57"
+    },
+    "r": {
+      "identity": 1155209588304248889,
+      "start": 57,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155209588304248889",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:57",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 58,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Micro-Entrepreneurs"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:58"
+    },
+    "r": {
+      "identity": 1152954489955680314,
+      "start": 58,
+      "end": 59,
+      "type": "APPLY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152954489955680314",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:58",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59"
+    },
+    "m": {
+      "identity": 59,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Islamic Microfinance Bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59"
+    }
+  },
+  {
+    "n": {
+      "identity": 58,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Micro-Entrepreneurs"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:58"
+    },
+    "r": {
+      "identity": 6937831509847965712,
+      "start": 58,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6937831509847965712",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:58",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 59,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Islamic Microfinance Bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59"
+    },
+    "r": {
+      "identity": 1152952290932424763,
+      "start": 59,
+      "end": 6,
+      "type": "PROVIDE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152952290932424763",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    },
+    "m": {
+      "identity": 6,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "debt_based",
+        "shariah_contract",
+        "philanthropic_based"
+      ],
+      "properties": {
+        "meaning": "benevolent_loan",
+        "name": "Qard"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:6"
+    }
+  },
+  {
+    "n": {
+      "identity": 59,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Islamic Microfinance Bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59"
+    },
+    "r": {
+      "identity": 1155204090746110011,
+      "start": 59,
+      "end": 44,
+      "type": "PROVIDE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1155204090746110011",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:44"
+    },
+    "m": {
+      "identity": 44,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "equity_based"
+      ],
+      "properties": {
+        "meaning": "partnership",
+        "name": "Mudharabah"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:44"
+    }
+  },
+  {
+    "n": {
+      "identity": 59,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Islamic Microfinance Bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59"
+    },
+    "r": {
+      "identity": 1157455890559795259,
+      "start": 59,
+      "end": 52,
+      "type": "PROVIDE",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1157455890559795259",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:52"
+    },
+    "m": {
+      "identity": 52,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "equity_based"
+      ],
+      "properties": {
+        "meaning": "jointVenture",
+        "profitSharing": "Mudarabah",
+        "name": "Musharakah",
+        "lossProvision": "CapitalProportion"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:52"
+    }
+  },
+  {
+    "n": {
+      "identity": 59,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Islamic Microfinance Bodies"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59"
+    },
+    "r": {
+      "identity": 6937831509847965721,
+      "start": 59,
+      "end": 25,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6937831509847965721",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:59",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    },
+    "m": {
+      "identity": 25,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Organisations"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 60,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "service_based"
+      ],
+      "properties": {
+        "meaning": "pawn-broking",
+        "name": "Rahn"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:60"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 62,
+      "labels": [
+        "ObligatoryConditions"
+      ],
+      "properties": {
+        "name": "Haul"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:62"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 63,
+      "labels": [
+        "Instrument",
+        "financing_based",
+        "shariah_contract",
+        "sale_qard"
+      ],
+      "properties": {
+        "name": "Istisna'"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:63"
+    },
+    "r": null,
+    "m": null
+  },
+  {
+    "n": {
+      "identity": 65,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "ZakatPayer",
+        "name": "Muzzaki",
+        "wealthType": "Cash, Gold, Business"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65"
+    },
+    "r": {
+      "identity": 1152922604118474817,
+      "start": 65,
+      "end": 62,
+      "type": "COMPLETES",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152922604118474817",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:62"
+    },
+    "m": {
+      "identity": 62,
+      "labels": [
+        "ObligatoryConditions"
+      ],
+      "properties": {
+        "name": "Haul"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:62"
+    }
+  },
+  {
+    "n": {
+      "identity": 65,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "ZakatPayer",
+        "name": "Muzzaki",
+        "wealthType": "Cash, Gold, Business"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65"
+    },
+    "r": {
+      "identity": 1152923703630102593,
+      "start": 65,
+      "end": 66,
+      "type": "REACHES",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152923703630102593",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:66"
+    },
+    "m": {
+      "identity": 66,
+      "labels": [
+        "ObligatoryConditions"
+      ],
+      "properties": {
+        "name": "Nisab"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:66"
+    }
+  },
+  {
+    "n": {
+      "identity": 65,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "ZakatPayer",
+        "name": "Muzzaki",
+        "wealthType": "Cash, Gold, Business"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65"
+    },
+    "r": {
+      "identity": 1152936897769635905,
+      "start": 65,
+      "end": 20,
+      "type": "PAY",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:1152936897769635905",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:20"
+    },
+    "m": {
+      "identity": 20,
+      "labels": [
+        "Stakeholder",
+        "Organisations"
+      ],
+      "properties": {
+        "name": "Zakat Collector"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:20"
+    }
+  },
+  {
+    "n": {
+      "identity": 65,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person",
+        "Organisations"
+      ],
+      "properties": {
+        "meaning": "ZakatPayer",
+        "name": "Muzzaki",
+        "wealthType": "Cash, Gold, Business"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65"
+    },
+    "r": {
+      "identity": 6924320710965854224,
+      "start": 65,
+      "end": 16,
+      "type": "IS_A",
+      "properties": {},
+      "elementId": "5:c883c11c-f83d-494c-a5b2-aba710575b64:6924320710965854224",
+      "startNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:65",
+      "endNodeElementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    },
+    "m": {
+      "identity": 16,
+      "labels": [
+        "Stakeholder",
+        "Muslim",
+        "Person"
+      ],
+      "properties": {
+        "name": "Individual",
+        "category": "Muslim"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 66,
+      "labels": [
+        "ObligatoryConditions"
+      ],
+      "properties": {
+        "name": "Nisab"
+      },
+      "elementId": "4:c883c11c-f83d-494c-a5b2-aba710575b64:66"
+    },
+    "r": null,
+    "m": null
+  }
+]
