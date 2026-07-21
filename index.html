@@ -3,84 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <title>Islamic Social Finance Knowledge Graph</title>
-    <!-- Assuming you uploaded this file to your GitHub as per previous step -->
+    <!-- Ensure this file is in your repo -->
     <script type="text/javascript" src="vis-network.min.js"></script>
     <style>
-        body { margin: 0; font-family: sans-serif; display: flex; height: 100vh; }
-        #network { flex-grow: 1; background-color: #f4f7f9; }
-        #sidebar { width: 350px; border-left: 1px solid #ddd; padding: 20px; background: white; overflow-y: auto; box-shadow: -3px 0 10px rgba(0,0,0,0.05); }
-        .node-label { font-weight: bold; color: #0056b3; font-size: 1.2em; }
-        .prop-item { margin: 8px 0; font-size: 0.9em; border-bottom: 1px solid #eee; padding-bottom: 4px; }
-        .prop-key { font-weight: bold; color: #555; text-transform: capitalize; }
-        #loading { position: absolute; top: 50%; left: 45%; font-size: 1.5em; color: #666; }
+        /* FIX: Ensure the browser knows to fill the whole screen */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: row;
+        }
+        /* FIX: Explicitly set height and width for the graph */
+        #network {
+            flex: 1;
+            height: 100vh; 
+            background-color: #f8f9fa;
+        }
+        #sidebar {
+            width: 320px;
+            height: 100vh;
+            border-left: 1px solid #ccc;
+            padding: 20px;
+            background: white;
+            overflow-y: auto;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        #loading-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            font-size: 1.2em;
+        }
+        .prop-item { margin-bottom: 8px; font-size: 13px; }
+        .prop-key { font-weight: bold; color: #555; }
     </style>
 </head>
 <body>
 
-    <div id="loading">Building Knowledge Graph...</div>
+    <div id="loading-overlay">Initializing Graph...</div>
     <div id="network"></div>
 
     <div id="sidebar">
-        <h3>Details</h3>
-        <div id="details">Click a node or connection to see Islamic Social Finance properties.</div>
+        <h3>Node Inspector</h3>
+        <hr>
+        <div id="details">Click a node to view properties.</div>
     </div>
 
     <script type="text/javascript">
         fetch('graph.json')
             .then(res => res.json())
             .then(rawData => {
-                document.getElementById('loading').style.display = 'none';
+                console.log("JSON loaded successfully. Row count:", rawData.length);
 
                 const nodesMap = new Map();
                 const edges = [];
 
-                // PARSER: Specifically for your n -> r -> m format
-                rawData.forEach(row => {
-                    // 1. Process Node 'n'
+                rawData.forEach((row, index) => {
+                    // Extract Node N
                     if (row.n) {
-                        addNode(row.n);
+                        processNode(row.n);
                     }
-                    // 2. Process Node 'm'
+                    // Extract Node M
                     if (row.m) {
-                        addNode(row.m);
+                        processNode(row.m);
                     }
-                    // 3. Process Relationship 'r'
+                    // Extract Relationship R
                     if (row.r) {
                         edges.push({
-                            id: row.r.identity,
                             from: row.r.start,
                             to: row.r.end,
                             label: row.r.type,
                             arrows: 'to',
-                            color: { color: '#848484' },
-                            font: { size: 10, align: 'top' }
+                            font: { size: 10, color: '#666', align: 'middle' },
+                            color: { color: '#cccccc' }
                         });
                     }
                 });
 
-                function addNode(neoNode) {
-                    const id = neoNode.identity;
+                function processNode(node) {
+                    const id = node.identity;
                     if (!nodesMap.has(id)) {
-                        // Priority for labels: name -> meaning -> identity
-                        const label = neoNode.properties.name || neoNode.properties.meaning || `ID: ${id}`;
+                        const name = node.properties.name || node.properties.meaning || "Unnamed";
                         nodesMap.set(id, {
                             id: id,
-                            label: label,
-                            title: neoNode.labels.join(', '), // Hover tooltip
-                            properties: neoNode.properties,
-                            labels: neoNode.labels,
-                            // Styling based on Label
-                            color: getColor(neoNode.labels)
+                            label: String(name),
+                            title: node.labels.join(', '),
+                            properties: node.properties,
+                            group: node.labels[0] // Grouping for automatic coloring
                         });
                     }
                 }
 
-                function getColor(labels) {
-                    if (labels.includes('Stakeholder')) return { background: '#D2E5FF', border: '#2B7CE9' };
-                    if (labels.includes('Instrument')) return { background: '#FFF4D2', border: '#E9AF2B' };
-                    if (labels.includes('Domain')) return { background: '#D2FFD6', border: '#2BE94F' };
-                    return { background: '#eeeeee', border: '#cccccc' };
-                }
+                console.log("Processing complete:", nodesMap.size, "nodes,", edges.length, "edges.");
 
                 const container = document.getElementById('network');
                 const data = {
@@ -89,33 +114,54 @@
                 };
 
                 const options = {
+                    nodes: {
+                        shape: 'dot',
+                        size: 20,
+                        font: { size: 14 }
+                    },
                     physics: {
-                        stabilization: true,
-                        barnesHut: { gravitationalConstant: -3000, springLength: 150 }
+                        enabled: true,
+                        solver: 'forceAtlas2Based',
+                        stabilization: { iterations: 100 }
                     },
                     interaction: { hover: true }
                 };
 
+                // Initialize Network
                 const network = new vis.Network(container, data, options);
 
-                // Sidebar Interaction
+                // Remove loading overlay when done
+                network.on("afterDrawing", () => {
+                    document.getElementById('loading-overlay').style.display = 'none';
+                });
+
+                // Zoom to fit all nodes once stabilized
+                network.once("stabilizationIterationsDone", () => {
+                    network.fit();
+                });
+
+                // Sidebar click logic
                 network.on("click", function(params) {
                     const detailsDiv = document.getElementById('details');
                     if (params.nodes.length > 0) {
-                        const node = data.nodes.get(params.nodes[0]);
-                        let html = `<div class="node-label">${node.label}</div>`;
-                        html += `<p><b>Labels:</b> ${node.labels.join(', ')}</p><hr>`;
-                        for (let [k, v] of Object.entries(node.properties)) {
+                        const nodeId = params.nodes[0];
+                        const nodeData = data.nodes.get(nodeId);
+                        
+                        let html = `<h4>${nodeData.label}</h4>`;
+                        html += `<p><b>Type:</b> ${nodeData.title}</p><hr>`;
+                        for (let [k, v] of Object.entries(nodeData.properties)) {
                             html += `<div class="prop-item"><span class="prop-key">${k}:</span> ${v}</div>`;
                         }
                         detailsDiv.innerHTML = html;
                     } else {
-                        detailsDiv.innerHTML = "Click a node to see details";
+                        detailsDiv.innerHTML = "Click a node to view properties.";
                     }
                 });
+
             })
             .catch(err => {
-                document.getElementById('loading').innerHTML = "Error loading graph.json: " + err.message;
+                console.error("Error processing graph:", err);
+                document.getElementById('loading-overlay').innerHTML = "Error: " + err.message;
             });
     </script>
 </body>
