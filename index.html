@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISF Knowledge Graph v2</title>
+    <!-- Ensure vis-network.min.js is in your GitHub repo -->
     <script type="text/javascript" src="vis-network.min.js"></script>
     <style>
-        html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; font-family: sans-serif; }
         #wrapper { display: flex; height: 100vh; width: 100vw; }
         #network { flex: 1; height: 100%; background: #fdfdfd; }
         #sidebar { width: 320px; padding: 20px; overflow-y: auto; background: white; border-left: 1px solid #ddd; box-shadow: -2px 0 10px rgba(0,0,0,0.05); }
-        #status { position: absolute; bottom: 15px; left: 15px; background: rgba(50,50,50,0.9); color: white; padding: 8px 12px; font-size: 12px; border-radius: 20px; z-index: 1000; transition: opacity 0.5s; }
-        h3 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .prop { margin-bottom: 8px; font-size: 13px; padding: 5px; background: #f9f9f9; border-radius: 4px; }
-        .prop b { color: #34495e; text-transform: capitalize; }
+        #status { position: absolute; bottom: 15px; left: 15px; background: rgba(50,50,50,0.9); color: white; padding: 8px 12px; font-size: 11px; border-radius: 20px; z-index: 1000; }
+        h3 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 0; }
+        .prop { margin-bottom: 8px; font-size: 13px; padding: 5px; background: #f9f9f9; border-radius: 4px; border-left: 3px solid #3498db; }
+        .prop b { color: #34495e; }
     </style>
 </head>
 <body>
@@ -23,14 +25,15 @@
         <div id="network"></div>
         <div id="sidebar">
             <h3>Node Inspector</h3>
-            <div id="details">Select a node to explore Islamic Social Finance properties.</div>
+            <div id="details">Select a node to explore its properties.</div>
         </div>
     </div>
 
     <script type="text/javascript">
         const statusEl = document.getElementById('status');
-        function updateStatus(msg) { statusEl.innerText = "Status: " + msg; console.log(msg); }
+        function updateStatus(msg) { statusEl.innerText = "Status: " + msg; }
 
+        // Helper to handle Neo4j large IDs
         function parseNeoId(id) {
             if (typeof id === 'object' && id !== null) {
                 return id.low !== undefined ? id.low : JSON.stringify(id);
@@ -38,41 +41,36 @@
             return id;
         }
 
-        // Add a timestamp to bypass Incognito cache issues
+        // Fetch data with a timestamp to prevent Incognito caching issues
         fetch('graph.json?t=' + new Date().getTime())
-            .then(res => {
-                if (!res.ok) throw new Error("Could not find the graph data file.");
-                return res.json();
-            })
+            .then(res => res.json())
             .then(data => {
-                // Verification check:
-                if (!Array.isArray(data)) {
-                    throw new Error("The graph.json file is a dashboard config, not node data. Please export Query Results instead.");
-                }
-
                 updateStatus("Parsing " + data.length + " data rows...");
                 
                 const nodesMap = new Map();
                 const edges = [];
 
                 data.forEach(row => {
+                    // Extract nodes n and m
                     ['n', 'm'].forEach(key => {
                         if (row[key]) {
                             const node = row[key];
                             const id = parseNeoId(node.identity);
                             if (!nodesMap.has(id)) {
+                                const labels = node.labels || [];
                                 nodesMap.set(id, {
                                     id: id,
                                     label: String(node.properties.name || node.properties.meaning || id),
-                                    title: "Labels: " + node.labels.join(', '),
+                                    title: "Labels: " + labels.join(', '),
                                     properties: node.properties,
-                                    labels: node.labels,
-                                    group: node.labels[0]
+                                    labels: labels,
+                                    color: getNodeColor(labels)
                                 });
                             }
                         }
                     });
 
+                    // Extract relationship r
                     if (row.r) {
                         edges.push({
                             from: parseNeoId(row.r.start),
@@ -80,10 +78,18 @@
                             label: row.r.type,
                             arrows: 'to',
                             color: { color: '#999999' },
-                            font: { size: 11, color: '#333', align: 'top' }
+                            font: { size: 10, align: 'top' }
                         });
                     }
                 });
+
+                function getNodeColor(labels) {
+                    if (labels.includes('Domain')) return { background: '#d5f5e3', border: '#2ecc71' }; // Green
+                    if (labels.includes('Instrument')) return { background: '#fcf3cf', border: '#f1c40f' }; // Yellow
+                    if (labels.includes('Stakeholder')) return { background: '#d6eaf8', border: '#3498db' }; // Blue
+                    if (labels.includes('ObligatoryConditions')) return { background: '#f5b7b1', border: '#e74c3c' }; // Red
+                    return { background: '#ebedef', border: '#99a3a4' }; // Grey
+                }
 
                 const container = document.getElementById('network');
                 const networkData = {
@@ -95,7 +101,6 @@
                     physics: {
                         enabled: true,
                         solver: 'forceAtlas2Based',
-                        forceAtlas2Based: { gravitationalConstant: -50, springLength: 100 },
                         stabilization: { iterations: 150 }
                     },
                     interaction: { dragNodes: true, hover: true }
@@ -107,18 +112,17 @@
                 // Disable physics after initial layout so nodes stay where they are put
                 network.on("stabilizationIterationsDone", function () {
                     network.setOptions({ physics: false });
-                    updateStatus("Graph Ready. Drag nodes to reposition them.");
-                    setTimeout(() => statusEl.style.opacity = '0.4', 3000);
+                    updateStatus("Graph Ready. Drag nodes to reposition.");
                 });
 
-                // Pin nodes when dragged
+                // Pin nodes when dragged so they don't bounce back
                 network.on("dragEnd", function (params) {
                     if (params.nodes.length > 0) {
                         networkData.nodes.update({id: params.nodes[0], fixed: true});
                     }
                 });
 
-                // Sidebar click logic
+                // Interaction Logic
                 network.on("click", function(params) {
                     const detailsDiv = document.getElementById('details');
                     if (params.nodes.length > 0) {
@@ -136,7 +140,7 @@
             })
             .catch(err => {
                 updateStatus("ERROR: " + err.message);
-                document.getElementById('network').innerHTML = `<div style="padding:50px; color:red;">${err.message}</div>`;
+                console.error(err);
             });
     </script>
 </body>
