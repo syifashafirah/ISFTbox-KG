@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Graph Validator</title>
-    <!-- Load Vis-Network library from CDN -->
-    <script type="text/javascript" src="https://unpkg.com"></script>
+    <!-- FIX: Corrected Vis-Network library path -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <style>
         body { margin: 0; font-family: sans-serif; display: flex; height: 100vh; overflow: hidden; }
         #network { flex-grow: 1; height: 100%; background-color: #f8f9fa; }
@@ -12,14 +13,14 @@
         h3 { margin-top: 0; color: #333; border-bottom: 2px solid #0056b3; padding-bottom: 8px; }
         .property { margin-bottom: 10px; font-size: 14px; }
         .label { font-weight: bold; color: #555; }
+        #loading { position: absolute; top: 50%; left: 40%; transform: translate(-50%, -50%); font-size: 20px; color: #666; }
     </style>
 </head>
 <body>
 
-    <!-- Left side: Interactive Graph -->
+    <div id="loading">Loading Knowledge Graph...</div>
     <div id="network"></div>
 
-    <!-- Right side: Validation Sidebar -->
     <div id="sidebar">
         <h3>Node Inspector</h3>
         <p id="instruction">Click any node or connection to inspect its properties and check for accuracy.</p>
@@ -27,82 +28,102 @@
     </div>
 
     <script type="text/javascript">
-        // 1. Fetch data from your exported file
         fetch('graph.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) throw new Error("Could not load graph.json");
+                return response.json();
+            })
             .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                
                 const nodesMap = new Map();
                 const edges = [];
 
-                // 2. Parse Neo4j Browser JSON format into Vis.js format
+                // Helper to extract Identity
+                const getId = (identity) => {
+                    if (typeof identity === 'object' && identity !== null) {
+                        return identity.low !== undefined ? identity.low : JSON.stringify(identity);
+                    }
+                    return identity;
+                };
+
+                // 2. Parse Neo4j JSON
                 data.forEach(row => {
-                    // Extract node details
+                    // Extract nodes (n and m)
                     ['n', 'm'].forEach(key => {
                         if (row[key]) {
                             const node = row[key];
-                            const labelText = node.properties.name || node.properties.title || node.identity;
-                            nodesMap.set(node.identity, {
-                                id: node.identity,
-                                label: String(labelText),
-                                title: `Label: ${node.labels.join(', ')}`, // Hover tooltip
-                                properties: node.properties,
-                                labels: node.labels,
-                                color: { background: '#97c2fc', border: '#2b7ce9' }
-                            });
+                            const id = getId(node.identity);
+                            
+                            if (!nodesMap.has(id)) {
+                                const labelText = node.properties.name || node.properties.title || node.properties.label || id;
+                                nodesMap.set(id, {
+                                    id: id,
+                                    label: String(labelText),
+                                    title: `Labels: ${node.labels ? node.labels.join(', ') : 'None'}`,
+                                    properties: node.properties || {},
+                                    labels: node.labels || [],
+                                    color: { background: '#97c2fc', border: '#2b7ce9' }
+                                });
+                            }
                         }
                     });
 
-                    // Extract relationship details
+                    // Extract relationship (r)
                     if (row.r) {
                         const rel = row.r;
                         edges.push({
-                            id: rel.identity,
-                            from: rel.start,
-                            to: rel.end,
+                            id: getId(rel.identity),
+                            from: getId(rel.start),
+                            to: getId(rel.end),
                             label: rel.type,
                             font: { align: 'top', size: 12 },
                             arrows: 'to',
-                            properties: rel.properties,
+                            properties: rel.properties || {},
                             color: { color: '#848484' }
                         });
                     }
                 });
 
-                const nodes = Array.from(nodesMap.values());
+                const nodesArray = Array.from(nodesMap.values());
+                const nodesDS = new vis.DataSet(nodesArray);
+                const edgesDS = new vis.DataSet(edges);
 
-                // 3. Initialize Vis.js Network
+                // 3. Initialize Vis.js
                 const container = document.getElementById('network');
-                const networkData = { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) };
+                const networkData = { nodes: nodesDS, edges: edgesDS };
                 
                 const options = {
-                    physics: { barnesHut: { gravitationalConstant: -3000, centralGravity: 0.3, springLength: 95 } },
+                    physics: {
+                        enabled: true,
+                        barnesHut: { gravitationalConstant: -2000, centralGravity: 0.3, springLength: 150 },
+                        stabilization: { iterations: 100 }
+                    },
                     interaction: { hover: true, navigationButtons: true }
                 };
 
                 const network = new vis.Network(container, networkData, options);
 
-                // 4. Handle Clicks to show information in Sidebar
+                // 4. Interaction Logic
                 network.on("click", function (params) {
                     const detailsDiv = document.getElementById('details');
                     const instruction = document.getElementById('instruction');
                     detailsDiv.innerHTML = "";
 
                     if (params.nodes.length > 0) {
-                        // Node selected
-                        const selectedNodeId = params.nodes[0];
-                        const clickedNode = nodes.find(n => n.id === selectedNodeId);
+                        const selectedId = params.nodes[0];
+                        const clickedNode = nodesDS.get(selectedId);
                         instruction.style.display = "none";
                         
                         let html = `<p><span class="label">ID:</span> ${clickedNode.id}</p>`;
-                        html += `<p><span class="label">Type:</span> ${clickedNode.labels.join(', ')}</p><h4>Properties:</h4>`;
+                        html += `<p><span class="label">Labels:</span> ${clickedNode.labels.join(', ')}</p><h4>Properties:</h4>`;
                         for (const [key, val] of Object.entries(clickedNode.properties)) {
                             html += `<div class="property"><span class="label">${key}:</span> ${val}</div>`;
                         }
                         detailsDiv.innerHTML = html;
                     } else if (params.edges.length > 0) {
-                        // Edge selected
                         const selectedEdgeId = params.edges[0];
-                        const clickedEdge = edges.find(e => e.id === selectedEdgeId);
+                        const clickedEdge = edgesDS.get(selectedEdgeId);
                         instruction.style.display = "none";
                         
                         let html = `<p><span class="label">Relationship:</span> ${clickedEdge.label}</p><h4>Properties:</h4>`;
@@ -115,12 +136,14 @@
                         }
                         detailsDiv.innerHTML = html;
                     } else {
-                        // Clicked on empty background
                         instruction.style.display = "block";
                     }
                 });
             })
-            .catch(error => console.error('Error reading graph.json:', error));
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('loading').innerHTML = "Error loading data. Check console (F12).";
+            });
     </script>
 </body>
 </html>
